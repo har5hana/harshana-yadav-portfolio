@@ -1,0 +1,1211 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HTML
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    background: white;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.portfolio {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================
+   CORNER INFORMATION
+========================================= */
+
+.corner {
+    position: absolute;
+
+    z-index: 50;
+
+    font-size: clamp(8px, 0.7vw, 11px);
+    font-weight: 700;
+
+    letter-spacing: 0.28em;
+
+    text-transform: uppercase;
+}
+
+.corner-top-left {
+    top: clamp(20px, 3.5vh, 38px);
+    left: clamp(20px, 3vw, 40px);
+}
+
+.corner-top-right {
+    top: clamp(20px, 3.5vh, 38px);
+    right: clamp(20px, 3vw, 40px);
+}
+
+.corner-bottom-left {
+    bottom: clamp(20px, 3.2vh, 34px);
+    left: clamp(20px, 3vw, 40px);
+
+    line-height: 1.5;
+}
+
+.corner-bottom-right {
+    bottom: clamp(20px, 3.2vh, 34px);
+    right: clamp(20px, 3vw, 40px);
+}
+
+
+/* =========================================
+   RECORD WRAPPER
+========================================= */
+
+.record-wrapper {
+
+    /*
+       Desktop size remains essentially the same.
+       min() allows the record to automatically
+       scale when the viewport becomes smaller.
+    */
+
+    width: min(95vw, 95vh, 1300px);
+    height: min(95vw, 95vh, 1300px);
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================
+   RECORD
+========================================= */
+
+.record {
+
+    width: 121%;
+    height: 121%;
+
+    object-fit: contain;
+
+    display: block;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    animation:
+        recordSpin 40s linear infinite;
+
+    filter:
+        drop-shadow(
+            0 25px 40px rgba(0, 0, 0, 0.08)
+        );
+}
+
+
+/* =========================================
+   RECORD ROTATION
+========================================= */
+
+@keyframes recordSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   CENTER TEXT
+========================================= */
+
+.center-content {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: min(400px, 35vw);
+
+    text-align: center;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+.center-content h1 {
+
+    font-size:
+        clamp(32px, 5vw, 72px);
+
+    line-height: 0.82;
+
+    letter-spacing: -0.07em;
+
+    font-weight: 900;
+
+    color: #000;
+}
+
+
+.center-content p {
+
+    margin-top:
+        clamp(13px, 2vh, 24px);
+
+    font-size:
+        clamp(7px, 0.8vw, 12px);
+
+    letter-spacing: 0.38em;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   RECORD LINKS
+========================================= */
+
+.record-links {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+.link {
+
+    position: absolute;
+
+    pointer-events: auto;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size:
+        clamp(9px, 1.2vw, 17px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+
+/* =========================================
+   LINKEDIN
+   TOP OF RECORD
+========================================= */
+
+.linkedin {
+
+    top: 7%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================
+   CONTACT
+   UPPER LEFT OF RECORD
+========================================= */
+
+.contact {
+
+    top: 27%;
+
+    left: 7%;
+}
+
+
+/* =========================================
+   PROJECTS
+   LEFT SIDE OF RECORD
+========================================= */
+
+.projects {
+
+    top: 49%;
+
+    left: -1%;
+}
+
+
+/* =========================================
+   GITHUB
+   RIGHT SIDE OF RECORD
+========================================= */
+
+.github {
+
+    top: 49%;
+
+    right: -1%;
+}
+
+
+/* =========================================
+   ABOUT ME
+   BOTTOM OF RECORD
+========================================= */
+
+.about {
+
+    bottom: 6%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.linkedin:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.15);
+
+    letter-spacing: 0.15em;
+}
+
+
+.about:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.15);
+
+    letter-spacing: 0.15em;
+}
+
+
+.contact:hover,
+.projects:hover,
+.github:hover {
+
+    transform:
+        scale(1.15);
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   FULL SCREEN SECTIONS
+========================================= */
+
+.page-section {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    background: white;
+
+    z-index: 200;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease,
+        visibility 0.45s;
+}
+
+
+/*
+   When URL hash points to the section,
+   show it.
+*/
+
+.page-section:target {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   SECTION CONTENT
+========================================= */
+
+.section-inner {
+
+    width:
+        min(1100px, 85vw);
+
+    margin: auto;
+
+    padding:
+        clamp(60px, 10vh, 100px) 0;
+}
+
+
+.section-number {
+
+    font-size:
+        clamp(9px, 0.8vw, 12px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom:
+        clamp(25px, 4vh, 40px);
+}
+
+
+.section-inner h2 {
+
+    font-size:
+        clamp(55px, 13vw, 180px);
+
+    line-height: 0.8;
+
+    letter-spacing: -0.08em;
+
+    font-weight: 900;
+
+    margin-bottom:
+        clamp(40px, 7vh, 70px);
+}
+
+
+.intro {
+
+    max-width: 800px;
+
+    font-size:
+        clamp(22px, 3vw, 45px);
+
+    line-height: 1.15;
+
+    letter-spacing: -0.03em;
+
+    margin-bottom:
+        clamp(40px, 7vh, 70px);
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-button {
+
+    position: fixed;
+
+    top:
+        clamp(18px, 3vh, 30px);
+
+    right:
+        clamp(18px, 3vw, 35px);
+
+    width:
+        clamp(40px, 4vw, 48px);
+
+    height:
+        clamp(40px, 4vw, 48px);
+
+    border: 1px solid #111;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #111;
+
+    font-size:
+        clamp(22px, 2.3vw, 28px);
+
+    cursor: pointer;
+
+    z-index: 300;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.close-button:hover {
+
+    background: #111;
+
+    color: white;
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        clamp(20px, 4vw, 40px);
+
+    border-top:
+        1px solid #111;
+
+    padding-top: 25px;
+}
+
+
+.details span {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+
+.details p {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(13px, 1.2vw, 16px);
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.project-list {
+
+    border-top:
+        1px solid #111;
+}
+
+
+.project {
+
+    min-height:
+        clamp(90px, 10vh, 120px);
+
+    display: grid;
+
+    grid-template-columns:
+        clamp(40px, 6vw, 80px)
+        1fr
+        clamp(100px, 12vw, 150px);
+
+    align-items: center;
+
+    color: #111;
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid #ccc;
+
+    transition:
+        padding 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.project:hover {
+
+    padding-left: 20px;
+
+    background: #f5f5f5;
+}
+
+
+.project span {
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+}
+
+
+.project strong {
+
+    font-size:
+        clamp(21px, 4vw, 50px);
+
+    font-weight: 600;
+
+    letter-spacing: -0.05em;
+}
+
+
+.project small {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   EMAIL
+========================================= */
+
+.email {
+
+    display: inline-block;
+
+    max-width: 100%;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size:
+        clamp(22px, 5vw, 65px);
+
+    letter-spacing: -0.05em;
+
+    border-bottom:
+        2px solid #111;
+
+    padding-bottom: 8px;
+
+    overflow-wrap: anywhere;
+}
+
+
+.email:hover {
+
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.social-links {
+
+    display: flex;
+
+    gap:
+        clamp(20px, 4vw, 40px);
+
+    margin-top:
+        clamp(40px, 7vh, 70px);
+}
+
+
+.social-links a {
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    border-bottom:
+        1px solid #111;
+
+    padding-bottom: 7px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .record-wrapper {
+
+        width:
+            min(90vw, 90vh);
+
+        height:
+            min(90vw, 90vh);
+    }
+
+    .center-content {
+
+        width: 38vw;
+    }
+
+    .link {
+
+        font-size:
+            clamp(8px, 1.5vw, 15px);
+    }
+
+    .section-inner {
+
+        width: 88vw;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .portfolio {
+
+        width: 100%;
+
+        height: 100vh;
+        height: 100dvh;
+
+        min-height: 100dvh;
+    }
+
+
+    /* CORNERS */
+
+    .corner {
+
+        font-size: 8px;
+
+        letter-spacing: 0.2em;
+    }
+
+    .corner-top-left {
+
+        top: 20px;
+
+        left: 20px;
+    }
+
+    .corner-top-right {
+
+        top: 20px;
+
+        right: 20px;
+    }
+
+    .corner-bottom-left {
+
+        bottom: 20px;
+
+        left: 20px;
+    }
+
+    .corner-bottom-right {
+
+        bottom: 20px;
+
+        right: 20px;
+    }
+
+
+    /* RECORD */
+
+    .record-wrapper {
+
+        width:
+            min(92vw, 82vh);
+
+        height:
+            min(92vw, 82vh);
+    }
+
+
+    /* CENTER */
+
+    .center-content {
+
+        width:
+            min(230px, 42vw);
+    }
+
+    .center-content h1 {
+
+        font-size:
+            clamp(24px, 8vw, 34px);
+    }
+
+    .center-content p {
+
+        margin-top:
+            clamp(9px, 2vh, 13px);
+
+        font-size:
+            clamp(5px, 1.8vw, 7px);
+
+        letter-spacing:
+            0.25em;
+    }
+
+
+    /* LINKS */
+
+    .link {
+
+        font-size:
+            clamp(7px, 2.5vw, 9px);
+    }
+
+
+    .linkedin {
+
+        top: 7%;
+    }
+
+
+    .contact {
+
+        left: 7%;
+
+        top: 27%;
+    }
+
+
+    .projects {
+
+        left: -3%;
+
+        top: 49%;
+    }
+
+
+    .github {
+
+        right: -3%;
+
+        top: 49%;
+    }
+
+
+    .about {
+
+        bottom: 6%;
+    }
+
+
+    /* SECTIONS */
+
+    .section-inner {
+
+        width: 85vw;
+
+        padding:
+            70px 0 50px;
+    }
+
+
+    .section-inner h2 {
+
+        font-size:
+            clamp(55px, 17vw, 65px);
+
+        margin-bottom:
+            45px;
+    }
+
+
+    .intro {
+
+        font-size:
+            clamp(22px, 7vw, 30px);
+
+        margin-bottom:
+            45px;
+    }
+
+
+    /* DETAILS */
+
+    .details {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    /* PROJECTS */
+
+    .project {
+
+        grid-template-columns:
+            35px 1fr;
+
+        min-height:
+            100px;
+    }
+
+
+    .project strong {
+
+        font-size:
+            clamp(20px, 6vw, 27px);
+    }
+
+
+    .project small {
+
+        display: none;
+    }
+
+
+    /* EMAIL */
+
+    .email {
+
+        font-size:
+            clamp(20px, 7vw, 30px);
+
+        word-break: break-word;
+    }
+
+
+    /* SOCIAL LINKS */
+
+    .social-links {
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        margin-top: 45px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .record-wrapper {
+
+        width:
+            min(90vw, 80vh);
+
+        height:
+            min(90vw, 80vh);
+    }
+
+
+    .record {
+
+        width: 121%;
+        height: 121%;
+    }
+
+
+    .center-content {
+
+        width: 43vw;
+    }
+
+
+    .center-content h1 {
+
+        font-size:
+            clamp(22px, 8vw, 30px);
+    }
+
+
+    .link {
+
+        font-size:
+            clamp(6px, 2.3vw, 8px);
+    }
+
+
+    .corner {
+
+        font-size: 7px;
+
+        letter-spacing: 0.16em;
+    }
+
+
+    .corner-top-left,
+    .corner-top-right {
+
+        top: 15px;
+    }
+
+
+    .corner-bottom-left,
+    .corner-bottom-right {
+
+        bottom: 15px;
+    }
+
+
+    .corner-top-left,
+    .corner-bottom-left {
+
+        left: 15px;
+    }
+
+
+    .corner-top-right,
+    .corner-bottom-right {
+
+        right: 15px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .record-wrapper {
+
+        width:
+            min(88vw, 78vh);
+
+        height:
+            min(88vw, 78vh);
+    }
+
+
+    .record {
+
+        width: 121%;
+        height: 121%;
+    }
+
+
+    .center-content {
+
+        width: 44vw;
+    }
+
+
+    .center-content h1 {
+
+        font-size:
+            23px;
+    }
+
+
+    .center-content p {
+
+        font-size:
+            5px;
+    }
+
+
+    .link {
+
+        font-size:
+            6px;
+    }
+
+}
+
+
+/* =========================================
+   SHORT LAPTOP / DESKTOP SCREENS
+========================================= */
+
+@media (min-width: 701px) and (max-height: 700px) {
+
+    .record-wrapper {
+
+        width:
+            min(88vw, 88vh);
+
+        height:
+            min(88vw, 88vh);
+    }
+
+
+    .corner-top-left,
+    .corner-top-right {
+
+        top: 20px;
+    }
+
+
+    .corner-bottom-left,
+    .corner-bottom-right {
+
+        bottom: 20px;
+    }
+
+
+    .center-content h1 {
+
+        font-size:
+            clamp(32px, 7vh, 60px);
+    }
+
+
+    .center-content p {
+
+        margin-top: 15px;
+    }
+
+
+    .link {
+
+        font-size:
+            clamp(9px, 1.5vw, 15px);
+    }
+
+}
+
+
+/* =========================================
+   LANDSCAPE MOBILE
+========================================= */
+
+@media (max-width: 900px) and (max-height: 500px) {
+
+    .record-wrapper {
+
+        width:
+            min(72vw, 82vh);
+
+        height:
+            min(72vw, 82vh);
+    }
+
+
+    .record {
+
+        width: 121%;
+        height: 121%;
+    }
+
+
+    .center-content h1 {
+
+        font-size:
+            clamp(20px, 7vh, 32px);
+    }
+
+
+    .center-content p {
+
+        margin-top: 7px;
+
+        font-size: 5px;
+    }
+
+
+    .link {
+
+        font-size: 7px;
+    }
+
+}
